@@ -1,0 +1,243 @@
+{
+  "name": "shop",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "HsSaR",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "🐷",
+          "type": "SUCCESS",
+          "id": "msg-button-0cecde5",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "author_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "author_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "author_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "role": "101",
+              "varName2": "IDROLI",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "2",
+                "iffalseVal": "7"
+              },
+              "name": "Check If Member has Role"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "Błąd!",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nPosiadasz już ten przedmiot!\n```",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze_variable",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze_variable",
+              "comparison": "4",
+              "value": "99",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "11"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "Błąd!",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie stać Cię na to!\n```",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nPomyślnie zakupiłeś rolę: Świnka 🐷\n```",
+                  "fields": [],
+                  "author": "Sukces!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/w2jL1la.png",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-100",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName2": "",
+              "role": "101",
+              "varName": "IDROLI",
+              "reason": "",
+              "name": "Add Member Role"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Sklep:",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/1KHgPwt.png",
+          "thumbUrl": "",
+          "description": "Role\n\n> NAME ROLE: `CENA` 💸\n\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "Wszystkie ceny zostały skonsultowane z administracją serwera",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Zobacz serwerowy sklep!"
+}

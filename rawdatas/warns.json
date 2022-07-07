@@ -1,0 +1,98 @@
+{
+  "name": "warns",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "knvjf",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "server_name",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "ostrzeżenia",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "ostrzeżenia_variable",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Twoje statystyki ostrzeżeń!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`❓` Ilość ostrzeżeń:",
+              "value": "> `${tempVars(\"ostrzeżenia_variable\")}`",
+              "inline": "false"
+            },
+            {
+              "name": "`🔗` Serwer:",
+              "value": "> `${tempVars(\"server_name\")}`",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Sprawdza ilość ostrzeżeń!"
+}

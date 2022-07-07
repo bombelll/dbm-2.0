@@ -1,0 +1,262 @@
+{
+  "name": "transfer",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "aqPEn",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "1",
+      "storage": "1",
+      "varName2": "user_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "user_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "21",
+      "storage": "1",
+      "varName2": "user_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "zarobione_pieniądze",
+      "comparison": "3",
+      "value": "slashParams(\"ilosc\")",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "10"
+      },
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "```\nNie masz tyle 💸\n```",
+          "fields": [],
+          "author": "Błąd!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "4",
+      "varName": "ilosc",
+      "comparison": "3",
+      "value": "1",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "13"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "```\nMusisz przelać chociaż 1 💸\n```",
+          "fields": [],
+          "author": "Błąd!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "dataName": "zarobione_pieniądze",
+      "changeType": "1",
+      "value": "slashParams(\"ilosc\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "uzytkownik",
+      "dataName": "zarobione_pieniądze",
+      "changeType": "1",
+      "value": "-slashParams(\"ilosc\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"user_avatar\")}",
+          "description": "```\nPomyślnie przelałeś ${slashParams(\"ilosc\")} 💸 ${tempVars(\"user_tag\")}\n```",
+          "fields": [],
+          "author": "Sukces!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/mV2vgWf.gif",
+          "footerText": "${tempVars(\"user_tag\")} (${tempVars(\"user_id\")})",
+          "footerIconUrl": "${tempVars(\"user_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "uzytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "```\n${tempVars(\"author_tag\")} przelał Ci ${slashParams(\"ilosc\")} 💸\n```",
+          "fields": [],
+          "author": "Sukces!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/mV2vgWf.gif",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Przelej użytkownikowi pieniądze!",
+  "parameters": [
+    {
+      "name": "uzytkownik",
+      "description": "Wybierz użytkowniak któremu chcesz przelać pieniądzę!",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "ilosc",
+      "description": "Wybierz ilość pieniędzy którą chcesz przelać!",
+      "type": "INTEGER",
+      "required": true,
+      "choices": null
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "name": "removerole",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "HaoHB",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_ROLES",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "7"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "> `❌` Nie masz wystarczających uprawnień!\n> `🔒` Uprawnienie - **ZARZĄDZANIE_ROLAMI**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "role": "6",
+      "varName2": "rola",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "10"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "> `❌` Ten użytkownik nie posiada oznaczonej roli.",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mention_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mention_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "21",
+      "storage": "1",
+      "varName2": "mention_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "role": "6",
+      "varName": "rola",
+      "info": "2",
+      "storage": "1",
+      "varName2": "role_name",
+      "name": "Store Role Info"
+    },
+    {
+      "member": "5",
+      "varName2": "uzytkownik",
+      "role": "6",
+      "varName": "rola",
+      "reason": "",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Poprawnie odebrano role!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`📛` Administrator:",
+              "value": "> ${member}・${tempVars(\"author_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`👤` Użytkownik:",
+              "value": "> ${slashParams(\"uzytkownik\")}・${tempVars(\"mention_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`🔧` Rola: ",
+              "value": "> ${slashParams(\"rola\")}・${tempVars(\"role_name\")}",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"mention_tag\")} (${tempVars(\"mention_id\")})",
+          "footerIconUrl": "${tempVars(\"mention_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Odbiera role użytkwonikowi!",
+  "parameters": [
+    {
+      "name": "uzytkownik",
+      "description": "Użytkownik któremu chcesz odebrać role!",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "rola",
+      "description": "Rola którą chcesz odebrać!",
+      "type": "ROLE",
+      "required": true,
+      "choices": null
+    }
+  ]
+}

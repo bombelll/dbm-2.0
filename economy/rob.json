@@ -1,0 +1,469 @@
+{
+  "name": "rob",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "KktuZ",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "dataName": "zarobione_pieniądze",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "zarobione_pieniądze_variable",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "skardzione_pieniądze",
+      "min": "50",
+      "max": "350",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "zarobione_pieniądze_variable",
+      "comparison": "3",
+      "value": "1",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "9"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "```\nTen użytkownik ma mniej niż 1 💸\n```\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "1",
+      "storage": "1",
+      "varName2": "user_id",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "author_id",
+      "comparison": "1",
+      "value": "tempVars(\"user_id\")",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "13"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "```\nNie możesz okraść samego siebie!\n```",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "min": "1",
+      "max": "10",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'1'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "25"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'2'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "25"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'3'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "25"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'4'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "30"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'5'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "25"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'6'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "28"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'7'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "30"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'8'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "28"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'9'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "28"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "różne-wypowiedzi",
+      "comparison": "1",
+      "value": "'10'",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "30"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "zarobione_pieniądze",
+      "changeType": "1",
+      "value": "-tempVars(\"skardzione_pieniądze\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "Policja cie złapała i musiałeś zapłacić grzywne w wysokości `${tempVars(\"skardzione_pieniądze\")}` 💸!",
+          "fields": [],
+          "author": "Przykro mi!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/7YuhPjQ.png",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "${slashParams(\"uzytkownik\")} Zadzwonił na policję i musiałeś uciec bez łupu!",
+          "fields": [],
+          "author": "Przykro mi!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/7YuhPjQ.png",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "dataName": "zarobione_pieniądze",
+      "changeType": "1",
+      "value": "-tempVars(\"skardzione_pieniądze\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "uzytkownik",
+      "dataName": "zarobione_pieniądze",
+      "changeType": "1",
+      "value": "tempVars(\"skardzione_pieniądze\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "Pomyślnie okradłeś ${slashParams(\"uzytkownik\")} z `${tempVars(\"skardzione_pieniądze\")}` 💸",
+          "fields": [],
+          "author": "Sukces!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/w2jL1la.png",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "uzytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#ed4245",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "${member} okradł cię z `${tempVars(\"skardzione_pieniądze\")}` 💸\n",
+          "fields": [],
+          "author": "Przykro mi!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/7YuhPjQ.png",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "uzytkownik",
+      "description": "Użytkownik którego chcesz okraść!",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "Zarób przez okradnięcie użytkownika!",
+  "_timeRestriction": 7200
+}

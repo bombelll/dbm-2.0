@@ -1,0 +1,485 @@
+{
+  "name": "key_shop",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "uLLNr",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "😎",
+          "type": "SUCCESS",
+          "id": "msg-button-da211f6",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "author_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "author_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "author_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze_variable",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze_variable",
+              "comparison": "4",
+              "value": "999",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "8"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "Błąd!",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie stać Cię na to!\n```",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nPomyślnie zakupiłeś rolę: Klucz do skrzyni Premium 😎\n```",
+                  "fields": [],
+                  "author": "Sukces!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/w2jL1la.png",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "klucz_premium",
+              "changeType": "1",
+              "value": "1",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-1000",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "name": "💲",
+          "type": "SUCCESS",
+          "id": "msg-button-c3f38fc",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "author_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "author_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "author_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze_variable",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze_variable",
+              "comparison": "4",
+              "value": "1999",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "8"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "Błąd!",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie stać Cię na to!\n```",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nPomyślnie zakupiłeś rolę: Klucz do skrzyni Deluxe 💲\n```",
+                  "fields": [],
+                  "author": "Sukces!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/w2jL1la.png",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "klucz_deluxe",
+              "changeType": "1",
+              "value": "1",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-2000",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "name": "🧠",
+          "type": "SUCCESS",
+          "id": "msg-button-62e7cb7",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "author_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "author_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "author_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze_variable",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze_variable",
+              "comparison": "4",
+              "value": "2999",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "8"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "Błąd!",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie stać Cię na to!\n```",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nPomyślnie zakupiłeś rolę: Klucz do skrzyni Master 🧠\n```",
+                  "fields": [],
+                  "author": "Sukces!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/w2jL1la.png",
+                  "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+                  "footerIconUrl": "${tempVars(\"author_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "klucz_master",
+              "changeType": "1",
+              "value": "1",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-3000",
+              "name": "Control Member Data"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Sklep:",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/1KHgPwt.png",
+          "thumbUrl": "",
+          "description": "Klucze:\n\n> 😎 Premium: `1000` 💸\n> `💲` Deluxe: `2000` 💸\n> 🧠 Master: `3000` 💸\n\nWygrane:\n\n> 😎 Premium: `(500-1500)` 💸\n> `💲` Deluxe: `(1500-3000)` 💸\n> 🧠 Master: `(2000-4500)` 💸\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Zobacz sklep z kluczami do skrzynek!"
+}

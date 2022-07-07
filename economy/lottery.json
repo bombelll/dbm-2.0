@@ -1,0 +1,746 @@
+{
+  "name": "lottery",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "EGQFb",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "member_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "member_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "member_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "⚫",
+          "type": "SUCCESS",
+          "id": "msg-button-9aed946",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "member_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "member_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "member_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze",
+              "comparison": "3",
+              "value": "1500",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "2",
+                "iffalseVal": "8"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie masz wystarczająco 💸\n```",
+                  "fields": [],
+                  "author": "Niestety!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "min": "1",
+              "max": "2",
+              "name": "Generate Random Number"
+            },
+            {
+              "storage": "1",
+              "varName": "wygrana-strata",
+              "min": "500",
+              "max": "1500",
+              "name": "Generate Random Number"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "comparison": "1",
+              "value": "'1'",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "13"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "comparison": "1",
+              "value": "'2'",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "16"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-tempVars(\"wygrana-strata\")",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nWziąłeś udział w lotteri jako ⚫ i straciłeś ${tempVars(\"wygrana-strata\")} 💸\n```",
+                  "fields": [],
+                  "author": "Niestety!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "tempVars(\"wygrana-strata\")",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nWziąłeś udział w lotteri jako ⚫ i wygrałeś ${tempVars(\"wygrana-strata\")} 💸\n```",
+                  "fields": [],
+                  "author": "Gratulacje!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/mV2vgWf.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "name": "🔴",
+          "type": "SUCCESS",
+          "id": "msg-button-8771783",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "member_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "member_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "member_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze",
+              "comparison": "3",
+              "value": "3000",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "2",
+                "iffalseVal": "8"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie masz wystarczająco 💸\n```",
+                  "fields": [],
+                  "author": "Niestety!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "min": "1",
+              "max": "2",
+              "name": "Generate Random Number"
+            },
+            {
+              "storage": "1",
+              "varName": "wygrana-strata",
+              "min": "1500",
+              "max": "3000",
+              "name": "Generate Random Number"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "comparison": "1",
+              "value": "'1'",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "13"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "comparison": "1",
+              "value": "'2'",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "16"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-tempVars(\"wygrana-strata\")",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nWziąłeś udział w lotteri jako 🔴 i straciłeś ${tempVars(\"wygrana-strata\")} 💸\n```",
+                  "fields": [],
+                  "author": "Niestety!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "tempVars(\"wygrana-strata\")",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nWziąłeś udział w lotteri jako 🔴 i wygrałeś ${tempVars(\"wygrana-strata\")} 💸\n```",
+                  "fields": [],
+                  "author": "Gratulacje!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/mV2vgWf.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "name": "🟢",
+          "type": "SUCCESS",
+          "id": "msg-button-98a6087",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "member_id",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "member_avatar",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "21",
+              "storage": "1",
+              "varName2": "member_tag",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "zarobione_pieniądze",
+              "name": "Store Member Data"
+            },
+            {
+              "storage": "1",
+              "varName": "zarobione_pieniądze",
+              "comparison": "3",
+              "value": "4500",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "2",
+                "iffalseVal": "8"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nNie masz wystarczająco 💸\n```",
+                  "fields": [],
+                  "author": "Niestety!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "min": "1",
+              "max": "2",
+              "name": "Generate Random Number"
+            },
+            {
+              "storage": "1",
+              "varName": "wygrana-strata",
+              "min": "2000",
+              "max": "4500",
+              "name": "Generate Random Number"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "comparison": "1",
+              "value": "'1'",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "13"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "storage": "1",
+              "varName": "win-lose",
+              "comparison": "1",
+              "value": "'2'",
+              "branch": {
+                "iftrue": "2",
+                "iffalse": "0",
+                "iftrueVal": "16"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "-tempVars(\"wygrana-strata\")",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#ed4245",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nWziąłeś udział w lotteri jako 🟢 i straciłeś ${tempVars(\"wygrana-strata\")} 💸\n```",
+                  "fields": [],
+                  "author": "Niestety!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/fG9Xh8l.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "zarobione_pieniądze",
+              "changeType": "1",
+              "value": "tempVars(\"wygrana-strata\")",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+                  "description": "```\nWziąłeś udział w lotteri jako 🟢 i wygrałeś ${tempVars(\"wygrana-strata\")} 💸\n```",
+                  "fields": [],
+                  "author": "Gratulacje!",
+                  "authorUrl": "",
+                  "authorIcon": "https://i.imgur.com/mV2vgWf.gif",
+                  "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Loteria!",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "```\nW lotteri możesz wygrać lub przegrać. Szanse są 50/50\n```\n\n`⚫` - `(500-1500)` 💸\n`🔴` - `(1500-3000)` 💸\n`🟢` - `(2000-4500)` 💸",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"member_tag\")} (${tempVars(\"member_id\")})",
+          "footerIconUrl": "${tempVars(\"member_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Zobacz ile masz szczęścia w loterii!"
+}

@@ -1,0 +1,172 @@
+{
+  "name": "ogloszenie",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "LxdVt",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_MESSAGES",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "7"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "> `❌` Nie masz wystarczających uprawnień!\n> `🔒` Uprawnienie - **ZARZĄDZANIE_WIADOMOŚCIAMI**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "8",
+      "varName": "kanal",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Nowe ogłoszenie: ${slashParams(\"tytul\")}",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`📛` Administrator:",
+              "value": "> ${member}・${tempVars(\"author_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`📋` Treść:",
+              "value": "> ${slashParams(\"tresc\")}",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Pomyślnie wysłano ogłoszenie na ${slashParams(\"kanal\")}",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "kanal",
+      "description": "Wybierz kanał na który ma wysłać się ogłoszenie!",
+      "type": "CHANNEL",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "tytul",
+      "description": "Podaj tytuał ogłoszenia!",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "tresc",
+      "description": "Podaj treść ogłoszenia!",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "Wyślij ogłoszenie na dany kanał!"
+}

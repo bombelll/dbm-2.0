@@ -1,0 +1,439 @@
+{
+  "name": "warn",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "whWes",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "BAN_MEMBERS",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "7"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "> `❌` Nie masz wystarczających uprawnień!\n> `🔒` Uprawnienie - **BANOWANIE_CZŁONKÓW**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "10"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Błąd!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "> `❌` Nie możesz nadać ostrzeżenia Administratorowi!",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mention_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "21",
+      "storage": "1",
+      "varName2": "mention_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mention_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "server_name",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "dataName": "ostrzeżenia",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Ostrzeżono użytkownika!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"mention_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`📛` Administrator:",
+              "value": "> ${member}・${tempVars(\"author_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`👤` Użytkownik",
+              "value": "> ${slashParams(\"uzytkownik\")}・${tempVars(\"mention_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`📋` Powód:",
+              "value": "> ${slashParams(\"powod\")}",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"mention_tag\")} (${tempVars(\"mention_id\")})",
+          "footerIconUrl": "${tempVars(\"mention_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "uzytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zostałeś/aś ostrzeżony/a!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`📛` Administrator:",
+              "value": "> ${member}・${tempVars(\"author_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`👤` Użytkownik",
+              "value": "> ${slashParams(\"uzytkownik\")}・${tempVars(\"mention_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`🔗` Serwer:",
+              "value": "> `${tempVars(\"server_name\")}`",
+              "inline": "false"
+            },
+            {
+              "name": "`📋` Powód:",
+              "value": "> ${slashParams(\"powod\")}",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "dataName": "ostrzeżenia",
+      "comparison": "1",
+      "value": "'3'",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "21"
+      },
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "8",
+      "varName": "uzytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zostałeś/aś wyrzucony/a!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`👤` Użytkownik",
+              "value": "> ${slashParams(\"uzytkownik\")}・${tempVars(\"mention_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`🔗` Serwer:",
+              "value": "> `${tempVars(\"server_name\")}`",
+              "inline": "false"
+            },
+            {
+              "name": "`📋` Powód:",
+              "value": "> `Automatyczne wyrzucenie - 3 ostrzeżenia.`",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "reason": "",
+      "name": "Kick Member"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "dataName": "ostrzeżenia",
+      "comparison": "1",
+      "value": "'6'",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "1"
+      },
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "8",
+      "varName": "uzytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zostałeś/aś zbanowany/a!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"author_avatar\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "`👤` Użytkownik",
+              "value": "> ${slashParams(\"uzytkownik\")}・${tempVars(\"mention_tag\")}",
+              "inline": "false"
+            },
+            {
+              "name": "`🔗` Serwer:",
+              "value": "> `${tempVars(\"server_name\")}`",
+              "inline": "false"
+            },
+            {
+              "name": "`📋` Powód:",
+              "value": "> `Automatyczny ban - 6 ostrzeżeń.`",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "5",
+      "varName": "uzytkownik",
+      "reason": "",
+      "days": "",
+      "name": "Ban Member"
+    }
+  ],
+  "comType": "4",
+  "description": "Ostrzega użytkownika!",
+  "parameters": [
+    {
+      "name": "uzytkownik",
+      "description": "Użytkownik któremu chcesz nadać ostrzeżenie!",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "powod",
+      "description": "Powód ostrzeżenia!",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ]
+}

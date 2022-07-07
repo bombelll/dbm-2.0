@@ -1,0 +1,101 @@
+{
+  "name": "work",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "XbiNw",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "author_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "author_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "pieniądze",
+      "min": "50",
+      "max": "350",
+      "name": "Generate Random Number"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "zarobione_pieniądze",
+      "changeType": "1",
+      "value": "tempVars(\"pieniądze\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "zarobione_pieniądze",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "zarobione_pieniądze_variable",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "https://i.imgur.com/pk71B2c.png",
+          "description": "```\nPomyślnie zarobiłeś ${tempVars(\"pieniądze\")} 💸\n```",
+          "fields": [
+            {
+              "name": "● Obecnie w posiadasz:",
+              "value": ">  `${tempVars(\"zarobione_pieniądze_variable\")}` 💸",
+              "inline": "false"
+            }
+          ],
+          "author": "Sukces!",
+          "authorUrl": "",
+          "authorIcon": "https://i.imgur.com/w2jL1la.png",
+          "footerText": "${tempVars(\"author_tag\")} (${tempVars(\"author_id\")})",
+          "footerIconUrl": "${tempVars(\"author_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "_timeRestriction": 3600,
+  "description": "Zarób legalnie pieniądze!"
+}
